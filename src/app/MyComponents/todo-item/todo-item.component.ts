@@ -10,13 +10,17 @@ export class TodoItemComponent implements OnInit {
   @Input('AppTodoItemTodo') todo;
   @Output('todoItemOnDeleteEventEmitter') onDelete: EventEmitter<Todo> =
     new EventEmitter();
-
+  @Output('todoItemOnToggleDoneEventEmitter')
+  onToggleDone: EventEmitter<number> = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
 
   onDeleteClick(todo: Todo) {
     this.onDelete.emit(todo);
-    console.log(todo.sno);
+  }
+
+  ToggleDone(sno: number) {
+    this.onToggleDone.emit(sno);
   }
 }

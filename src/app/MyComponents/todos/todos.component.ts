@@ -33,13 +33,15 @@ export class TodosComponent implements OnInit {
           isActive: true,
         },
       ];
-    } else this.todos = JSON.parse(localStorage.getItem('todos'));
+    } else this.getTodosFromLocalStorage();
+
+    console.log('Todos: ', this.todos);
   }
 
   onDeleteClick(todo: Todo) {
     let index = this.todos.indexOf(todo);
     this.todos.splice(index, 1);
-    localStorage.setItem('todos', JSON.stringify(this.todos));
+    this.saveTodosToLocalStorage();
   }
 
   addToDo(todo: Todo) {
@@ -51,7 +53,21 @@ export class TodosComponent implements OnInit {
       todo.sno = 1;
     }
     this.todos.push(todo);
+    this.saveTodosToLocalStorage();
+  }
+
+  onToggleDone(sno: number) {
+    let todoIndex = this.todos.findIndex((_) => _.sno == sno);
+    this.todos[todoIndex].isActive = !this.todos[todoIndex].isActive;
+    this.saveTodosToLocalStorage();
+  }
+
+  saveTodosToLocalStorage() {
     localStorage.setItem('todos', JSON.stringify(this.todos));
+  }
+
+  getTodosFromLocalStorage() {
+    this.todos = JSON.parse(localStorage.getItem('todos'));
   }
 
   ngOnInit(): void {}

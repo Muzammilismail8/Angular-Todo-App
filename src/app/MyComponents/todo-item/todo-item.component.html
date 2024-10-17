@@ -1,13 +1,25 @@
 <div class="my-3">
-  <h5>
-    {{ todo.title }}
-  </h5>
-  <p>
-    {{ todo.desc }}
-  </p>
+  <div [ngClass]="todo.isActive ? 'strike' : ''">
+    <h5>
+      {{ todo.title }}
+    </h5>
+    <p>
+      {{ todo.desc }}
+    </p>
+  </div>
+
   <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-    <label class="form-check-label" for="exampleCheck1">Mark as done</label>
+    <input
+      type="checkbox"
+      class="form-check-input"
+      id="isActivated-{{ todo.sno }}"
+      name="isActivated-{{ todo.sno }}"
+      [checked]="todo.isActive"
+      (click)="ToggleDone(todo.sno)"
+    />
+    <label class="form-check-label" for="isActivated-{{ todo.sno }}"
+      >Toggle Done
+    </label>
   </div>
   <button class="btn btn-sm btn-danger" (click)="onDeleteClick(todo)">
     Delete
