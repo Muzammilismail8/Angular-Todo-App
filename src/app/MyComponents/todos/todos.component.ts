@@ -10,28 +10,30 @@ export class TodosComponent implements OnInit {
   todos: Todo[];
 
   constructor() {
-    // this.todos = [
-    //   {
-    //     sno: 1,
-    //     title: 'This is Title 1',
-    //     desc: 'Description 1',
-    //     isActive: true,
-    //   },
-    //   {
-    //     sno: 2,
-    //     title: 'This is Title 2',
-    //     desc: 'Description 2',
-    //     isActive: true,
-    //   },
-    //   {
-    //     sno: 3,
-    //     title: 'This is Title 3',
-    //     desc: 'Description 3',
-    //     isActive: true,
-    //   },
-    // ];
+    let localStorageTotos = localStorage.getItem('todos');
 
-    this.todos = JSON.parse(localStorage.getItem('todos'));
+    if (localStorageTotos == null) {
+      this.todos = [
+        {
+          sno: 1,
+          title: 'This is Title 1',
+          desc: 'Description 1',
+          isActive: true,
+        },
+        {
+          sno: 2,
+          title: 'This is Title 2',
+          desc: 'Description 2',
+          isActive: true,
+        },
+        {
+          sno: 3,
+          title: 'This is Title 3',
+          desc: 'Description 3',
+          isActive: true,
+        },
+      ];
+    } else this.todos = JSON.parse(localStorage.getItem('todos'));
   }
 
   onDeleteClick(todo: Todo) {
@@ -42,8 +44,12 @@ export class TodosComponent implements OnInit {
 
   addToDo(todo: Todo) {
     console.log('Inside the addToDo.');
-    let lastIndex = this.todos[this.todos.length - 1].sno;
-    todo.sno = lastIndex + 1;
+    if (this.todos.length > 0) {
+      let lastIndex = this.todos[this.todos.length - 1].sno;
+      todo.sno = lastIndex + 1;
+    } else {
+      todo.sno = 1;
+    }
     this.todos.push(todo);
     localStorage.setItem('todos', JSON.stringify(this.todos));
   }
