@@ -1,0 +1,119 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+}
+
+/* About Section */
+.about-section {
+  padding: 50px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+.about-section h1 {
+  font-size: 36px;
+}
+
+.about-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+/* Cards Section */
+.row {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.column {
+  flex: 1;
+  max-width: 300px;
+  margin: 10px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  text-align: center;
+  padding: 20px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  border-radius: 10px 10px 0 0;
+}
+
+.container {
+  padding: 15px;
+}
+
+.container h2 {
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+.container .title {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.container p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #777;
+}
+
+/* Button Style */
+.button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+/* Contact Section */
+h2 {
+  font-size: 28px;
+  margin-top: 20px;
+  color: #333;
+}
+
+div[style="text-align: center"] p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .column {
+    max-width: 90%;
+  }
+}
