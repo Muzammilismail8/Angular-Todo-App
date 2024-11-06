@@ -1,27 +1,30 @@
-# AngularTodoApp
+# Angular Todo App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+This is a simple yet functional **Todo List** application built with **Angular**! It allows users to add, update, and delete tasks, helping you manage your daily tasks in a more organized way. The project follows modern Angular best practices and is hosted on **Firebase**.
 
-## Development server
+## 🚀 Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- **Add new tasks** with a title and optional description
+- **Mark tasks as complete** or delete them
+- **Responsive design** with Bootstrap integration
+- **Organized components** following Angular's component-based architecture
+- **Dynamic styling** with NgClass for visual feedback
 
-## Code scaffolding
+## 🌟 Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Follow these instructions to get a copy of the project running on your local machine.
 
-## Build
+### Prerequisites
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Make sure you have the following installed on your machine:
 
-## Running unit tests
+- **Node.js** and **npm** (Node Package Manager)
+- **Angular CLI**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Installation
 
-## Running end-to-end tests
+1. **Clone the repository:**
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   ```bash
+   git clone https://github.com/Muzammilismail8/Angular-Todo-App.git
+   cd Angular-Todo-App
